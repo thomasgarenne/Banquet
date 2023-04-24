@@ -28,6 +28,9 @@ class Wine
     #[ORM\Column(length: 255)]
     private ?string $grappes = null;
 
+    #[ORM\Column]
+    private ?int $price = null;
+
     #[ORM\ManyToOne(inversedBy: 'wines')]
     private ?categories $category = null;
 
@@ -80,6 +83,18 @@ class Wine
     public function setGrappes(string $grappes): self
     {
         $this->grappes = $grappes;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
