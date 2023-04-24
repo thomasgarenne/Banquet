@@ -34,7 +34,7 @@ class Orders
     private ?USER $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'orders')]
-    private ?ordersCapacity $ordersCapacity = null;
+    private ?OrdersCapacity $ordersCapacity = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
